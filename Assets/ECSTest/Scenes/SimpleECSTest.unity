@@ -266,7 +266,7 @@ GameObject:
   - component: {fileID: 1814759666}
   - component: {fileID: 1814759665}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: ESCTest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -283,8 +283,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: feb3eaa419e5a6a45ac9dd23566f0d4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mesh: {fileID: 0}
-  _material: {fileID: 0}
+  _mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  _material: {fileID: 2100000, guid: a619f585eee4ec5419e69e34ebbb90b1, type: 2}
 --- !u!4 &1814759666
 Transform:
   m_ObjectHideFlags: 0

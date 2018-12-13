@@ -15,7 +15,7 @@ public class ECSTest : MonoBehaviour
 
     private void Start()
     {
-        World world = World.Active;// = new World("hoge");
+        World world = World.Active;
         EntityManager entityManager = world.GetOrCreateManager<EntityManager>();
 
         // Prefabを作成
