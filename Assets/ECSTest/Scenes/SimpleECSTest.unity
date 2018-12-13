@@ -266,7 +266,7 @@ GameObject:
   - component: {fileID: 1814759666}
   - component: {fileID: 1814759665}
   m_Layer: 0
-  m_Name: ESCTest
+  m_Name: SimpleESCTest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

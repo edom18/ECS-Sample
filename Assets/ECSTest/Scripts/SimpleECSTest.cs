@@ -5,7 +5,7 @@ using Unity.Entities;
 using Unity.Transforms;
 using Unity.Rendering;
 
-public class ECSTest : MonoBehaviour
+public class SimpleECSTest : MonoBehaviour
 {
     [SerializeField]
     private Mesh _mesh;
