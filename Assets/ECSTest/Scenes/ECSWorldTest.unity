@@ -266,7 +266,7 @@ GameObject:
   - component: {fileID: 1620889359}
   - component: {fileID: 1620889358}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: ECSWorldTest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
