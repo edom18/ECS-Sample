@@ -29,8 +29,6 @@ public class ECSWorldTest : MonoBehaviour
         _gameWorld.CreateManager<EndFrameTransformSystem>();
         _gameWorld.CreateManager<EndFrameBarrier>();
 
-        _gameWorld.CreateManager<MeshInstanceRendererSystem>().ActiveCamera = Camera.main;
-
         // デフォルトで用意されている描画を行うためのシステム「MeshInstanceRendererSystem」の補助クラス
         _gameWorld.CreateManager<RenderingSystemBootstrap>();
 
