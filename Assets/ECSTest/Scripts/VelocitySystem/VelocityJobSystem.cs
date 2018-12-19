@@ -6,10 +6,10 @@ using Unity.Jobs;
 using Unity.Burst;
 using Unity.Transforms;
 
-public class VelocitySystem : JobComponentSystem
+public class VelocityJobSystem : JobComponentSystem
 {
     [BurstCompile]
-    struct Job : IJobProcessComponentData<Velocity, Position, Rotation>
+    struct Job : IJobProcessComponentData<Velocity, Position>
     {
         readonly float _deltaTime;
 
@@ -18,7 +18,7 @@ public class VelocitySystem : JobComponentSystem
             _deltaTime = deltaTime;
         }
 
-        public void Execute(ref Velocity velocity, ref Position position, ref Rotation rotation)
+        public void Execute(ref Velocity velocity, ref Position position)
         {
             position.Value += velocity.Value * _deltaTime;
         }

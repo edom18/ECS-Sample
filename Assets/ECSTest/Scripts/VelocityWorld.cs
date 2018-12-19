@@ -23,7 +23,7 @@ public class VelocityWorld : MonoBehaviour
         EntityManager manager = World.Active.CreateManager<EntityManager>();
         World.Active.CreateManager<EndFrameTransformSystem>();
         World.Active.CreateManager<RenderingSystemBootstrap>();
-        World.Active.CreateManager<VelocitySystem>();
+        World.Active.CreateManager<VelocityJobSystem>();
 
         EntityArchetype archetype = manager.CreateArchetype(
             typeof(Velocity),
