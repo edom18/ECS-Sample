@@ -14,6 +14,9 @@ public class VelocityWorld : MonoBehaviour
     [SerializeField]
     private Material _material;
 
+    [SerializeField]
+    private bool _useJobSystem = false;
+
     private void Start()
     {
         World.DisposeAllWorlds();
@@ -23,12 +26,19 @@ public class VelocityWorld : MonoBehaviour
         EntityManager manager = World.Active.CreateManager<EntityManager>();
         World.Active.CreateManager<EndFrameTransformSystem>();
         World.Active.CreateManager<RenderingSystemBootstrap>();
-        World.Active.CreateManager<VelocitySystem>();
+
+        if (_useJobSystem)
+        {
+            World.Active.CreateManager<VelocityJobSystem>();
+        }
+        else
+        {
+            World.Active.CreateManager<VelocitySystem>();
+        }
 
         EntityArchetype archetype = manager.CreateArchetype(
             typeof(Velocity),
             typeof(Position),
-            //typeof(Rotation),
             typeof(MeshInstanceRenderer)
         );
         Entity entity = manager.CreateEntity(archetype);
@@ -41,16 +51,9 @@ public class VelocityWorld : MonoBehaviour
 
         manager.SetComponentData(entity, new Velocity { Value = new float3(0, 1f, 0) });
         manager.SetComponentData(entity, new Position { Value = new float3(0, 0, 0) });
-        //manager.SetComponentData(entity, new Rotation { Value = Quaternion.Euler(0, 0, 0) });
 
         manager.Instantiate(entity);
 
         ScriptBehaviourUpdateOrder.UpdatePlayerLoop(World.Active);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }
